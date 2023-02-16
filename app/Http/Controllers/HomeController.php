@@ -11,7 +11,7 @@ class HomeController extends Controller
     {
         if (Auth::id()) {
             if (Auth::user() -> usertype =='0') {
-                return view('dashboard');
+                return view('user.home');
             } else {
                 return view('admin.home');
             }
@@ -20,5 +20,10 @@ class HomeController extends Controller
             return redirect() ->back();
         }
         
+    }
+
+    public function index()
+    {
+        return view('user.home');
     }
 }
