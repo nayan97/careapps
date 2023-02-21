@@ -16,7 +16,9 @@
         <!-- partial -->
         <div class="container-fluid page-body-wrapper">
             <div class="container">
-                <form action="#" method="POST">
+                @include('validate.error')
+                @include('validate.success')
+                <form action="{{url('upload_doctor')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <label>Doctor Name</label>
@@ -24,23 +26,23 @@
                     </div>
                     <div class="form-group">
                         <label>Phone</label>
-                        <input value="{{ old('company') }}" name="company" type="text" class="form-control">
+                        <input value="{{ old('phone') }}" name="phone" type="text" class="form-control">
                     </div>
                     <div class="form-group">
                         <label>Room Number</label>
-                        <input value="{{ old('company') }}" name="company" type="text" class="form-control">
+                        <input value="{{ old('room') }}" name="room" type="text" class="form-control">
                     </div>
                     <div class="form-group">
                         <label>Time</label>
-                        <input value="{{ old('company') }}" name="company" type="text" class="form-control">
+                        <input value="{{ old('time') }}" name="time" type="text" class="form-control">
                     </div>
                     <div class="form-group">
                         <label>Off Day</label>
-                        <input value="{{ old('company') }}" name="company" type="text" class="form-control">
+                        <input value="{{ old('holyday') }}" name="holyday" type="text" class="form-control">
                     </div>
                     <div class="form-group">
                         <label>Speaciality</label>
-                        <select style="color:#000; width: 200px;" name="" id="">
+                        <select style="color:#000; width: 200px;" name="speaciality" id="">
                             <option>Select</option>
                             <option value="skin">Skin</option>
                             <option value="medichin">Medichin</option>
@@ -51,17 +53,10 @@
                         </select>
                     </div>
                     <div class="form-group">
-											<label name="photo">Photo</label>
-											<br>
-										
-											<img style="max-width:100%" id="slider-photo-preview" src="" alt="">
-											<br>
-										
-											<input style="display:none;" name="photo" type="file" class="form-control" id="slider-photo">
-											<label for="slider-photo">
-                                                 <img class="" style="width:120px;cursor:pointer; margin-left: -10px !importent;" src="admin\assets\img\sohel.JPG" alt="">
-											</label>
-										</div>
+						<label>Photo</label>
+                        <input type="file" name="photo">
+					
+					</div>
                     
                     <div class="text-right">
                         <button type="submit" class="btn btn-primary">Submit</button>

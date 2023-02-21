@@ -20623,7 +20623,7 @@ div.tagsinput {
 /* Sidebar */
 .sidebar {
   min-height: calc(100vh - 70px);
-  background: #191c24;
+  background: #fff;
   font-weight: normal;
   padding: 0;
   width: 244px;
@@ -21126,10 +21126,14 @@ div.tagsinput {
       width: 100%; } }
 
 .content-wrapper {
-  background: #000000;
+  background: #fff;
   padding: 1.875rem 1.75rem;
   width: 100%;
   -webkit-flex-grow: 1;
   flex-grow: 1; }
+
+  .bg{
+    background: #fff;
+  }
 
 /*# sourceMappingURL=maps/style.css.map */

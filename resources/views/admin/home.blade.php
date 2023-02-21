@@ -10,7 +10,7 @@
       <!-- partial:partials/_sidebar.html -->
           @include('admin.sidebar')
       <!-- partial -->
-      <div class="container-fluid page-body-wrapper">
+      <div class="container-fluid page-body-wrapper bg">
         <!-- partial:partials/_navbar.html -->
             @include('admin.navbar')
         <!-- partial -->
