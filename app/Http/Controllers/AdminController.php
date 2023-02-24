@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Doctor;
+use App\Models\Appionment;
+use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
@@ -42,5 +43,34 @@ class AdminController extends Controller
 
 
 
+    }
+
+    // mange appoinments
+
+    public function showappoinments()
+    {    
+        $appo_data=appionment::all();
+   
+        return view('admin.appoinment', compact('appo_data')); 
+    }
+
+    // Approved Appoinment
+
+    public function approved($id)
+    {
+            $data=appionment::find($id);
+            $data -> status='Approved';
+            $data -> save();
+
+            return redirect() -> back();
+    }
+
+    public function cancel($id)
+    {
+            $data=appionment::find($id);
+            $data -> status='Canceled';
+            $data -> save();
+
+            return redirect() -> back();
     }
 }
