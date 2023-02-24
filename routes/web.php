@@ -13,9 +13,12 @@ use App\Http\Controllers\AdminController;
 Route::get('/',[HomeController::class, 'index']);
 Route::get('/home',[HomeController::class, 'redirect']);
 Route::post('/appointment',[HomeController::class, 'send']);
+Route::get('/myappointment',[HomeController::class, 'myappointment']);
+Route::get('/cancel_appoinment/{id}',[HomeController::class, 'apcancel']);
 
 Route::get('/add_doctor_view',[AdminController::class, 'addview']);
 Route::post('/upload_doctor',[AdminController::class, 'upload']);
+
 
 
 Route::middleware([

@@ -56,7 +56,34 @@ class HomeController extends Controller
 
         $data -> save();
 
-        return redirect()-> back();
+        return redirect()-> back() -> with('success', 'Your Reqest submited successfuly, Please Wait for confermation');
         
     }
+
+    public function myappointment()
+    {
+        if (Auth::id()) {
+            $userid=Auth::user()-> id;
+            $appoint=appionment::where('user_id',$userid) -> get();
+            return view('user.my_appointment',compact('appoint'));
+        }
+        else{
+            return redirect() -> back();
+        }
+        
+    }
+      
+    //cancel Appoinment
+
+    public function apcancel($id)
+    {
+            $ap_data=appionment::find($id);
+            $ap_data -> delete();
+
+            return redirect() -> back()-> with('success', 'Your Appoinment Canceled');
+        
+        
+    }
+
+    
 }
