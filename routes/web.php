@@ -21,6 +21,10 @@ Route::post('/upload_doctor',[AdminController::class, 'upload']);
 Route::get('/showappoinments',[AdminController::class, 'showappoinments']);
 Route::get('/approved/{id}',[AdminController::class, 'approved']);
 Route::get('/cancel/{id}',[AdminController::class, 'cancel']);
+Route::get('/alldoctor',[AdminController::class, 'alldoctor']);
+Route::get('/deletedoctor/{id}',[AdminController::class, 'deletedoctor']);
+Route::get('/updatedoctor/{id}',[AdminController::class, 'updatedoctor']);
+Route::post('/editdoctor/{id}',[AdminController::class, 'editdoctor']);
 
 
 
