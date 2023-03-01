@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\FrontendController;
 
 /*
 |
@@ -15,6 +16,8 @@ Route::get('/home',[HomeController::class, 'redirect']) ->middleware('auth','ver
 Route::post('/appointment',[HomeController::class, 'send']);
 Route::get('/myappointment',[HomeController::class, 'myappointment']);
 Route::get('/cancel_appoinment/{id}',[HomeController::class, 'apcancel']);
+
+Route::get('doctors',[FrontendController::class, 'doctors']);
 
 Route::get('/add_doctor_view',[AdminController::class, 'addview']);
 Route::post('/upload_doctor',[AdminController::class, 'upload']);
