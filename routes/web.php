@@ -19,6 +19,9 @@ Route::get('/cancel_appoinment/{id}',[HomeController::class, 'apcancel']);
 
 Route::get('/doctors',[FrontendController::class, 'doctors']);
 Route::get('/about',[FrontendController::class, 'aboutUs']);
+Route::get('/contact',[FrontendController::class, 'contactUs']);
+Route::get('/blog',[FrontendController::class, 'showBlog']);
+Route::get('/single',[FrontendController::class, 'showBlogSingle']);
 
 Route::get('/add_doctor_view',[AdminController::class, 'addview']);
 Route::post('/upload_doctor',[AdminController::class, 'upload']);

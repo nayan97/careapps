@@ -53,10 +53,10 @@
               <a class="nav-link" href="{{ url('doctors')}}">Doctors</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="blog.html">News</a>
+              <a class="nav-link" href="{{ url('/blog')}}">News</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
+              <a class="nav-link" href="{{ url('/contact')}}">Contact</a>
             </li>
 
              @if (Route::has('login'))

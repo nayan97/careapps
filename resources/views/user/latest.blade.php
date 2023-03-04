@@ -13,7 +13,7 @@
               </a>
             </div>
             <div class="body">
-              <h5 class="post-title"><a href="blog-details.html">List of Countries without Coronavirus case</a></h5>
+              <h5 class="post-title"><a href="{{ url('/single')}}">List of Countries without Coronavirus case</a></h5>
               <div class="site-info">
                 <div class="avatar mr-2">
                   <div class="avatar-img">
@@ -76,7 +76,7 @@
         </div>
 
         <div class="col-12 text-center mt-4 wow zoomIn">
-          <a href="blog.html" class="btn btn-primary">Read More</a>
+          <a href="{{ url('/blog')}}" class="btn btn-primary">Read More</a>
         </div>
 
       </div>

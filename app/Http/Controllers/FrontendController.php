@@ -13,10 +13,28 @@ class FrontendController extends Controller
         $doctor = doctor::all();
         return view('user.pages.doctors', compact('doctor'));
     }
-
+        
+    //show about page 
     public function aboutUs()
     {
-        //show about page 
+       
         return view('user.pages.about');
     }
+
+     //show contact page 
+    public function contactUs()
+    {
+        return view('user.pages.contact');
+    }
+         //show contact page 
+         public function showBlog()
+         {
+             return view('user.pages.blog');
+         }
+
+
+         public function showBlogSingle()
+         {
+            return view('user.pages.single');
+         }
 }
