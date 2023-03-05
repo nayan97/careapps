@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\Admin\TagController;
 
 /*
 |
@@ -32,6 +33,10 @@ Route::get('/alldoctor',[AdminController::class, 'alldoctor']);
 Route::get('/deletedoctor/{id}',[AdminController::class, 'deletedoctor']);
 Route::get('/updatedoctor/{id}',[AdminController::class, 'updatedoctor']);
 Route::post('/editdoctor/{id}',[AdminController::class, 'editdoctor']);
+
+Route::resource('/post/tag', TagController::class);
+
+
 
 
 

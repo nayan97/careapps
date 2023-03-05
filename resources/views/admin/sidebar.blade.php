@@ -71,6 +71,25 @@
                 <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> Register </a></li>
               </ul>
             </div>
+            
+          </li>
+             
+          <li class="nav-item menu-items">
+            <a class="nav-link" data-toggle="collapse" href="#blog" aria-expanded="false" aria-controls="blog">
+              <span class="menu-icon">
+                <i class="mdi mdi-security"></i>
+              </span>
+              <span class="menu-title">Blog</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="blog">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="pages/samples/blank-page.html"> All Posts </a></li>
+                <li class="nav-item"> <a class="nav-link" href="pages/samples/error-404.html"> Category </a></li>
+                <li class="nav-item"> <a class="nav-link" href="pages/samples/error-500.html"> Tag </a></li>
+              </ul>
+            </div>
+            
           </li>
           <li class="nav-item menu-items">
             <a class="nav-link" href="{{ url('add_doctor_view')}}">
