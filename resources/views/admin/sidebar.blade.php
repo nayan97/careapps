@@ -86,7 +86,7 @@
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="pages/samples/blank-page.html"> All Posts </a></li>
                 <li class="nav-item"> <a class="nav-link" href="pages/samples/error-404.html"> Category </a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/samples/error-500.html"> Tag </a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ url('tag')}}"> Tag </a></li>
               </ul>
             </div>
             

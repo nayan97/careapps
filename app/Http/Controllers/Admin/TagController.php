@@ -2,18 +2,19 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
 use App\Http\Controllers\Admin\TagController;
+use App\Models\Posttag;
 
 class TagController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index(): Response
+    public function index()
     {
         return view('admin.blog.tag.index');
     }
@@ -21,23 +22,37 @@ class TagController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create(): Response
+    public function create()
     {
-        return view('admin.blog.tag.posttag');
+        return view('admin.blog.tag.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request): RedirectResponse
+    public function store(Request $request)
     {
-        //
+        // Validate
+        $this -> validate($request,[
+            'name' => 'required|unique:posttags'
+        ]);
+
+        // create
+
+        Posttag::create([
+            'name'  => $request -> name,
+            'slug'  => Str::slug($request -> name)
+        ]);
+
+        // return
+
+         return back() -> with('success', 'Tag Added Successfuly');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id): Response
+    public function show(string $id)
     {
         //
     }

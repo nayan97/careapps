@@ -20623,7 +20623,7 @@ div.tagsinput {
 /* Sidebar */
 .sidebar {
   min-height: calc(100vh - 70px);
-  background: #fff;
+  background: #000;
   font-weight: normal;
   padding: 0;
   width: 244px;
@@ -21132,8 +21132,5 @@ div.tagsinput {
   -webkit-flex-grow: 1;
   flex-grow: 1; }
 
-  .bg{
-    background: #fff;
-  }
 
 /*# sourceMappingURL=maps/style.css.map */

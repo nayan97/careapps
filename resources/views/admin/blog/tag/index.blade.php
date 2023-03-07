@@ -16,9 +16,14 @@
         <div class="container-fluid page-body-wrapper bg">
         <br>
         <div class="col-lg-12 grid-margin stretch-card">
-                <div class="card">
+        
+                  <div class="card">
+                  <br>
+                    <div class="card-header d-flex justify-content-between">
+                    <h4 class="card-title">All Tags</h4>
+                    <a href="{{ route('tag.create') }}" class="text-right btn btn-primary">Add New Tag</a>
+                  </div>
                   <div class="card-body">
-                    <h4 class="card-title">Striped Table</h4>
                     <p class="card-description"> Add class <code>.table-striped</code>
                     </p>
                     <div class="table-responsive">

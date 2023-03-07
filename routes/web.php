@@ -34,7 +34,8 @@ Route::get('/deletedoctor/{id}',[AdminController::class, 'deletedoctor']);
 Route::get('/updatedoctor/{id}',[AdminController::class, 'updatedoctor']);
 Route::post('/editdoctor/{id}',[AdminController::class, 'editdoctor']);
 
-Route::resource('/post/tag', TagController::class);
+Route::resource('/tag', TagController::class);
+Route::resource('/tag', TagController::class);
 
 
 
