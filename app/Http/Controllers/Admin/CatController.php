@@ -3,21 +3,21 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Support\Str;
+use App\Models\Postcategory;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
-use App\Http\Controllers\Admin\TagController;
-use App\Models\Posttag;
 
-class TagController extends Controller
+class CatController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
-    {   $tags = Posttag::latest() -> get();
-        return view('admin.blog.tag.index',[
-            'tag'  => $tags
+    {
+        $cats = Postcategory::latest() -> get();
+        return view('admin.blog.category.index',[
+            'cat'  => $cats
         ]);
     }
 
@@ -26,7 +26,7 @@ class TagController extends Controller
      */
     public function create()
     {
-        return view('admin.blog.tag.create');
+        return view('admin.blog.category.create');
     }
 
     /**
@@ -34,27 +34,27 @@ class TagController extends Controller
      */
     public function store(Request $request)
     {
-        // Validate
-        $this -> validate($request,[
-            'name' => 'required|unique:posttags'
+          // Validate
+          $this -> validate($request,[
+            'name' => 'required|unique:postcategories'
         ]);
 
         // create
 
-        Posttag::create([
+        Postcategory::create([
             'name'  => $request -> name,
             'slug'  => Str::slug($request -> name)
         ]);
 
         // return
 
-         return back() -> with('success', 'Tag Added Successfuly');
+         return back() -> with('success', 'Category Added Successfuly');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $id): Response
     {
         //
     }
