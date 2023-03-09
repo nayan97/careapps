@@ -6,6 +6,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\Admin\CatController;
 use App\Http\Controllers\Admin\TagController;
+use App\Http\Controllers\Admin\PostController;
 
 /*
 |
@@ -37,6 +38,7 @@ Route::post('/editdoctor/{id}',[AdminController::class, 'editdoctor']);
 
 Route::resource('/tag', TagController::class);
 Route::resource('/category', CatController::class);
+Route::resource('/post', PostController::class);
 
 
 
