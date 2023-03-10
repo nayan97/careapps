@@ -13,6 +13,14 @@
     <script src="admin/assets/js/misc.js"></script>
     <script src="admin/assets/js/settings.js"></script>
     <script src="admin/assets/js/todolist.js"></script>
+    <script  src="{{ asset ('admin/assets/ckeditor/ckeditor.js')}}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <!-- endinject -->
     <!-- Custom js for this page -->
     <script src="admin/assets/js/dashboard.js"></script>
+    <script>
+        CKEDITOR.replace('post_editor');
+        $(document).ready(function() {
+   			 $('#tags').select2();
+			});
+    </script>

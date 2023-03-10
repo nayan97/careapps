@@ -10,10 +10,12 @@
     <link rel="stylesheet" href="admin/assets/vendors/flag-icon-css/css/flag-icon.min.css">
     <link rel="stylesheet" href="admin/assets/vendors/owl-carousel-2/owl.carousel.min.css">
     <link rel="stylesheet" href="admin/assets/vendors/owl-carousel-2/owl.theme.default.min.css">
+   
     <!-- End plugin css for this page -->
     <!-- inject:css -->
     <!-- endinject -->
     <!-- Layout styles -->
     <link rel="stylesheet" href="admin/assets/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <!-- End layout styles -->
     <link rel="shortcut icon" href="admin/assets/images/favicon.png" />

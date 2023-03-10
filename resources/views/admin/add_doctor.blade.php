@@ -20,6 +20,12 @@
                 @include('validate.success')
                 <form action="{{url('upload_doctor')}}" method="POST" enctype="multipart/form-data">
                     @csrf
+
+                    <br>
+                    <div>
+                        <h3>Add Doctor Data</h3>
+                    </div>
+                    <br>
                     <div class="form-group">
                         <label>Doctor Name</label>
                         <input value="{{ old('name') }}" name= "name" type="text" class="form-control">
