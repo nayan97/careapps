@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\Post;
 use App\Models\Posttag;
+use Illuminate\Support\Str;
 use App\Models\Postcategory;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -56,29 +57,27 @@ class PostController extends Controller
 
             if($request -> hasFile('featured') ){
                 $img =$request -> file('featured');
-                $img_name = time().'.'. $img->getClientOriginalExtension();
+                $img_name = md5(time().rand()) .'.'. $img-> clientExtension();
 
                 $image = Image::make($img -> getRealPath());
 
-                $image -> save(storage_path('app/public/posts/' . $img_name) );
+                $image -> save(storage_path('app/public/posts' . $img_name) );
             
             }
 
             // create
 
-            return $request ->all();
-
             Post::create([
-                'admin_id'      => Auth::guard('admin') -> user() -> id,
+                'admin_id'      => Auth::user()->id,
                 'title'         => $request -> title,
-                'slug'          => Str::slug($request -> name),
+                'slug'          => Str::slug($request -> title),
                 'featured'      => $request -> featured,
                 'content'       => $request -> content
             ]);
 
             // return
 
-            return back() -> with('success', 'Tag Added Successfuly');
+            return back() -> with('success', 'Post Added Successfuly');
                 }
 
     /**

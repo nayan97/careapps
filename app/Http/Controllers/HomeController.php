@@ -27,8 +27,14 @@ class HomeController extends Controller
 
     public function index()
     {
-        $doctor = doctor::all();
+        if(Auth::id()){
+            return redirect('home');
+        }
+        else{
+            $doctor = doctor::all();
         return view('user.home', compact('doctor'));
+        }
+        
     }
 
     // make appionment

@@ -24,14 +24,14 @@
                   </div>
                   <div class="card-body">
                     <h4 class="card-title">Add New Post</h4>
-                    @include('validate.error')
-                     @include('validate.success')
                   
-                    <form class="forms-sample" action="{{ route('post.store')}}" method="POST" enctype="multipart-formdata">
+                    <form class="forms-sample" action="{{ route('post.store')}}" method="POST" enctype="multipart/form-data">
                         @csrf
                       <div class="form-group row">
                         <label for="exampleInputUsername2" class="col-sm-2 col-form-label">Title</label>
                         <div class="col-sm-10">
+                        @include('validate.error')
+                     @include('validate.success')
                           <input name="title" type="text" class="form-control" id="exampleInputUsername2" placeholder="">
                         </div>
                       </div>

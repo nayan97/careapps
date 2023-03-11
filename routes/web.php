@@ -9,10 +9,14 @@ use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\PostController;
 
 /*
-|
-
-|
+||
 */
+Route::middleware('auth') -> group (function(){
+    Route::resource('/tag', TagController::class);
+    Route::resource('/category', CatController::class);
+    Route::resource('/post', PostController::class);
+});
+
 
 Route::get('/',[HomeController::class, 'index']);
 Route::get('/home',[HomeController::class, 'redirect']) ->middleware('auth','verified');
@@ -36,9 +40,7 @@ Route::get('/deletedoctor/{id}',[AdminController::class, 'deletedoctor']);
 Route::get('/updatedoctor/{id}',[AdminController::class, 'updatedoctor']);
 Route::post('/editdoctor/{id}',[AdminController::class, 'editdoctor']);
 
-Route::resource('/tag', TagController::class);
-Route::resource('/category', CatController::class);
-Route::resource('/post', PostController::class);
+
 
 
 

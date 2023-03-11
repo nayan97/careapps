@@ -40,9 +40,9 @@
                        
                             <tr>
                               <td>{{ $loop -> index +1}}</td>
-                              <td>{{ $cats -> name}}</td>
-                              <td>{{ $cats ->slug}}</td>
-                              <td>{{ $cats -> created_at -> diffForHumans() }}</td>
+                              <td>{{ $posts-> title}}</td>
+                              <td>{{ $posts-> slug}}</td>
+                              <td>{{ $posts-> created_at -> diffForHumans() }}</td>
                               <td>
                                                 <!----<a class="btn btn-sm btn-info" href="#"><i class="fe fe-eye"></i></a>-->
                                                 <a class="btn btn-sm btn-warning" href="#">Edit</a>
