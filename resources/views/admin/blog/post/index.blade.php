@@ -30,6 +30,7 @@
                           <tr>
                             <th>#</th>
                             <th>Tag Name</th>
+                            <th>Category</th>
                             <th>Slug</th>
                             <th>Createted at</th>
                             <th>Updated at</th>
@@ -40,8 +41,16 @@
                        
                             <tr>
                               <td>{{ $loop -> index +1}}</td>
-                              <td>{{ $posts-> title}}</td>
-                              <td>{{ $posts-> slug}}</td>
+                              <td style=" max-width:150px;">{{ $posts-> title}}</td>
+                              <td style="padding:17px">
+                                <ul>
+                                  @foreach ( $posts -> category as $cat )
+                                    <li>{{ $cat -> name }}</li>
+                                  @endforeach
+                                </ul>
+												      </td>
+                              <td style=" max-width:150px;">{{ $posts-> slug}}</td>
+                              
                               <td>{{ $posts-> created_at -> diffForHumans() }}</td>
                               <td>
                                                 <!----<a class="btn btn-sm btn-info" href="#"><i class="fe fe-eye"></i></a>-->

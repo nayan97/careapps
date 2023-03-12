@@ -67,13 +67,16 @@ class PostController extends Controller
 
             // create
 
-            Post::create([
+            $post = Post::create([
                 'admin_id'      => Auth::user()->id,
                 'title'         => $request -> title,
                 'slug'          => Str::slug($request -> title),
                 'featured'      => $request -> featured,
                 'content'       => $request -> content
             ]);
+
+            $post -> category() -> attach($request -> cat);
+            $post -> tag() -> attach($request -> tag);
 
             // return
 
