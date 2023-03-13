@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\User;
 use App\Models\Posttag;
 use App\Models\Postcategory;
 use Illuminate\Database\Eloquent\Model;
@@ -11,6 +12,11 @@ class Post extends Model
 {
     use HasFactory;
     Protected $guarded =[];
+
+    public function author()
+    {
+        return $this -> belongsTo(User::class, 'admin_id', 'id');
+    }
 
     public function category()
     {

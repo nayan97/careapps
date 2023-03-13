@@ -61,17 +61,18 @@ class PostController extends Controller
 
                 $image = Image::make($img -> getRealPath());
 
-                $image -> save(storage_path('app/public/posts' . $img_name) );
+                $image -> save(storage_path('app/public/posts/' . $img_name) );
             
             }
 
+        
             // create
 
             $post = Post::create([
                 'admin_id'      => Auth::user()->id,
                 'title'         => $request -> title,
                 'slug'          => Str::slug($request -> title),
-                'featured'      => $request -> featured,
+                'featured'      => $img_name,
                 'content'       => $request -> content
             ]);
 

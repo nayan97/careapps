@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use App\Models\Doctor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -28,8 +29,10 @@ class FrontendController extends Controller
     }
          //show contact page 
          public function showBlog()
-         {
-             return view('user.pages.blog');
+         {    $posts = Post::latest() -> get();
+             return view('user.pages.blog', [
+                'posts'  => $posts
+             ]);
          }
 
 
