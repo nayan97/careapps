@@ -3,13 +3,14 @@
 
 <div class="page-section pt-5">
     <div class="container">
+   
       <div class="row">
         <div class="col-lg-8">
           <nav aria-label="Breadcrumb">
             <ol class="breadcrumb bg-transparent py-0 mb-5">
               <li class="breadcrumb-item"><a href="{{ url('/')}}">Home</a></li>
               <li class="breadcrumb-item"><a href="{{ url('/blog')}}">Blog</a></li>
-              <li class="breadcrumb-item active" aria-current="page">List of Countries without Coronavirus case</li>
+              <li class="breadcrumb-item active" aria-current="page">{{ $post -> title }}</li>
             </ol>
           </nav>
         </div>
@@ -19,37 +20,38 @@
         <div class="col-lg-8">
           <article class="blog-details">
             <div class="post-thumb">
-              <img src="../assets/img/blog/blog_1.jpg" alt="">
+              <img src="{{ url('storage/posts/' . $post -> featured ) }}" alt="">
             </div>
             <div class="post-meta">
               <div class="post-author">
-                <span class="text-grey">By</span> <a href="#">Admin</a>  
+                <span class="text-grey">By</span> <a href="#">{{ $post -> author -> name }}</a>  
               </div>
               <span class="divider">|</span>
               <div class="post-date">
-                <a href="#">22 Jan, 2018</a>
+                <a href="#">{{ date('F d,Y', strtotime($post -> created_at)) }}</a>
               </div>
               <span class="divider">|</span>
               <div>
-                <a href="#">StreetStyle</a>, <a href="#">Fashion</a>, <a href="#">Couple</a>  
+              @foreach ( $post -> tag as $tag )
+                  <a href="#">{{ $tag -> name}}</a>
+                  @endforeach  
               </div>
               <span class="divider">|</span>
               <div class="post-comment-count">
                 <a href="#">8 Comments</a>
               </div>
             </div>
-            <h2 class="post-title h1">List of Countries without Coronavirus case</h2>
+            <h2 class="post-title h1">{{ $post -> title }}</h2>
             <div class="post-content">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet est vel orci luctus sollicitudin. Duis eleifend vestibulum justo, varius semper lacus condimentum dictum. Donec pulvinar a magna ut malesuada. In posuere felis diam, vel sodales metus accumsan in. Duis viverra dui eu pharetra pellentesque. Donec a eros leo. Quisque sed ligula vitae lorem efficitur faucibus. Praesent sit amet imperdiet ante. Nulla id tellus auctor, dictum libero a, malesuada nisi. Nulla in porta nibh, id vestibulum ipsum. Praesent dapibus tempus erat quis aliquet. Donec ac purus id sapien condimentum feugiat.</p>
-
-              <p>Praesent vel mi bibendum, finibus leo ac, condimentum arcu. Pellentesque sem ex, tristique sit amet suscipit in, mattis imperdiet enim. Integer tempus justo nec velit fringilla, eget eleifend neque blandit. Sed tempor magna sed congue auctor. Mauris eu turpis eget tortor ultricies elementum. Phasellus vel placerat orci, a venenatis justo. Phasellus faucibus venenatis nisl vitae vestibulum. Praesent id nibh arcu. Vivamus sagittis accumsan felis, quis vulputate</p>
+            {!! (htmlspecialchars_decode($post -> content))!!}
             </div>
             <div class="post-tags">
-              <a href="#" class="tag-link">LifeStyle</a>
-              <a href="#" class="tag-link">Food</a>
-              <a href="#" class="tag-link">Coronavirus</a>
+                 @foreach ( $post -> tag as $tag )
+                  <a href="#">{{ $tag -> name}}</a>
+                  @endforeach  
             </div>
           </article> <!-- .blog-details -->
+    
 
           <div class="comment-form-wrap pt-5">
             <h3 class="mb-5">Leave a comment</h3>
@@ -166,6 +168,9 @@
           </div>
         </div> 
       </div> <!-- .row -->
+        
+      
+    
     </div> <!-- .container -->
   </div>
 

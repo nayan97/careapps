@@ -36,8 +36,11 @@ class FrontendController extends Controller
          }
 
 
-         public function showBlogSingle()
+         public function showBlogSingle($slug)
          {
-            return view('user.pages.single');
+            $single_post = Post::where('slug', $slug) -> first();
+            return view('user.pages.single', [
+                'post'  => $single_post
+             ]);
          }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use App\Models\Doctor;
 use App\Models\Appionment;
 use Illuminate\Http\Request;
@@ -31,8 +32,11 @@ class HomeController extends Controller
             return redirect('home');
         }
         else{
+            $posts = Post::latest() -> get();
             $doctor = doctor::all();
-        return view('user.home', compact('doctor'));
+        return view('user.home', compact('doctor'),[
+            'posts'  => $posts
+        ]);
         }
         
     }
