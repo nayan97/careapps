@@ -29,6 +29,7 @@ Route::get('/about',[FrontendController::class, 'aboutUs']);
 Route::get('/contact',[FrontendController::class, 'contactUs']);
 Route::get('/blog',[FrontendController::class, 'showBlog']);
 Route::get('/single/{slug}',[FrontendController::class, 'showBlogSingle']) -> name('blog.single');
+Route::get('/post-search/{key}',[FrontendController::class, 'showBlogSingleBySearch']) -> name('blog.single.search');
 
 Route::get('/add_doctor_view',[AdminController::class, 'addview']);
 Route::post('/upload_doctor',[AdminController::class, 'upload']);

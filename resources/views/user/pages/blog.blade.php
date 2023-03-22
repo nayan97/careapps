@@ -14,6 +14,14 @@
     </div> <!-- .banner-section -->
 </div>
 
+@php
+      if( isset($_GET['name']) ){
+        $key = $_GET['name'];
+        $posts = App\Models\Post::where('title', 'LIKE', '%'.$key.'%') -> orwhere('content', 'LIKE', '%'.$key.'%') -> get();
+      }
+      
+    @endphp
+
 <div class="page-section">
     <div class="container">
       <div class="row">
