@@ -71,7 +71,7 @@ class PostController extends Controller
             $post = Post::create([
                 'admin_id'      => Auth::user()->id,
                 'title'         => $request -> title,
-                'slug'          => Str::slug($request -> title),
+                'slug'          => $this -> slugMake($request -> title),
                 'featured'      => $img_name,
                 'content'       => $request -> content
             ]);
