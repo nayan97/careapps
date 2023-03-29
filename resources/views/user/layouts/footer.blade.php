@@ -1,3 +1,6 @@
+@php
+  $theme_data = App\Models\Theme::find(1)
+@endphp 
 
 <footer class="page-footer">
     <div class="container">
@@ -47,6 +50,6 @@
 
       <hr>
 
-      <p id="copyright">Copyright &copy; 2020 <a href="https://macodeid.com/" target="_blank">MACode ID</a>. All right reserved</p>
+      <p id="copyright">&copy; {{ $theme_data -> copy }} </p>
     </div>
   </footer>

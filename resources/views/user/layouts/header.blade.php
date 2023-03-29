@@ -1,3 +1,7 @@
+@php
+  $theme_data = App\Models\Theme::find(1)
+@endphp  
+  
   <!-- Back to top button -->
   <div class="back-to-top"></div>
 
@@ -26,8 +30,11 @@
 
     <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
       <div class="container">
-        <a class="navbar-brand" href="#"><span class="text-primary">One</span>-Health</a>
-
+        @if ( $theme_data -> logo === 'logo.png')
+        <a class="navbar-brand" href="#"><span class="text-primary"> <img style="height:100px; width:140px;" src="../assets/logo/logo.png" alt=""></a>
+        @else
+        <a class="navbar-brand" href="#"><span class="text-primary"> <img src="{{ url('storage/logo/' . $theme_data -> logo ) }}" alt=""></a>
+        @endif
         <form action="#">
           <div class="input-group input-navbar">
             <div class="input-group-prepend">
