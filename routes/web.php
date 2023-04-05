@@ -7,6 +7,7 @@ use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\Admin\CatController;
 use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\Admin\ThemeOptionController;
 
 /*
 ||
@@ -15,6 +16,7 @@ Route::middleware('auth') -> group (function(){
     Route::resource('/tag', TagController::class);
     Route::resource('/category', CatController::class);
     Route::resource('/post', PostController::class);
+    Route::resource('/theme', ThemeOptionController::class);
 });
 
 
