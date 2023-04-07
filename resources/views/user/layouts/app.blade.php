@@ -1,3 +1,7 @@
+@php
+  $theme_data = App\Models\Theme::find(1)
+@endphp
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +12,7 @@
 
   <meta name="copyright" content="MACode ID, https://macodeid.com/">
 
-  <title>One Health - Medical Center HTML5 Template</title>
+  <title>{{ $theme_data -> title}} - {{ $theme_data -> tagline}}</title>
 
   <link rel="stylesheet" href="../assets/css/maicons.css">
 

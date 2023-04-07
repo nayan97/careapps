@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
+use Intervention\Image\Facades\Image;
 
 class ThemeOptionController extends Controller
 {
@@ -58,10 +59,24 @@ class ThemeOptionController extends Controller
     public function update(Request $request, string $id)
     {
        $themes = Theme::findOrFail(1);
+          // Photo Managment
+
+          if($request -> hasFile('logo') ){
+            $img =$request -> file('logo');
+            $img_name = md5(time().rand()) .'.'. $img-> clientExtension();
+
+            $image = Image::make($img -> getRealPath());
+
+            $image -> save(storage_path('app/public/logo/' . $img_name) );
+        
+        }
+
 
        $themes -> update([
             'title'    => $request -> title,
-            'copy'    => $request -> copy
+            'tagline'    => $request -> tagline,
+            'copy'    => $request -> copy,
+            'logo'     => $img_name ?? 'logo.png'
             
        ]);
 

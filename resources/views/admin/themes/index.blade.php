@@ -48,7 +48,7 @@
                           @if ( $theme -> logo === 'logo.png')
                             <a class="navbar-brand" href="#"><span class="text-primary"> <img style="height:100px; width:140px;" src="../assets/logo/logo.png" alt=""></a>
                           @else
-                            <a class="navbar-brand" href="#"><span class="text-primary"> <img src="{{ url('storage/logo/' . $theme -> logo ) }}" alt=""></a>
+                            <a class="navbar-brand" href="#"><span class="text-primary"> <img style="height:100px; width:140px;" src="{{ url('storage/logo/' . $theme -> logo ) }}" alt=""></a>
                           @endif
                           <br>
                           <br>
@@ -57,7 +57,7 @@
   
 				            	</div>
                       
-                      <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                      <button type="submit" class="btn btn-primary mr-2">Save</button>
                       <button class="btn btn-dark">Cancel</button>
                     </form>
                   </div>

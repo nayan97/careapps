@@ -12,7 +12,7 @@
                   <span class="count bg-success"></span>
                 </div>
                 <div class="profile-name">
-                  <h5 class="mb-0 font-weight-normal">Henry Klein</h5>
+                  <h5 class="mb-0 font-weight-normal">nmae</h5>
                   <span>Gold Member</span>
                 </div>
               </div>
@@ -92,9 +92,25 @@
             
           </li>
           <li class="nav-item menu-items">
+            <a class="nav-link" data-toggle="collapse" href="#theme" aria-expanded="false" aria-controls="theme">
+              <span class="menu-icon">
+                <i class="mdi mdi-settings"></i>
+              </span>
+              <span class="menu-title">Settings</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="theme">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{{ url('theme')}}"> Theme Settings </a></li>
+                <li class="nav-item"> <a class="nav-link" href="#"> Cantact Settings </a></li>
+              </ul>
+            </div>
+            
+          </li>
+          <li class="nav-item menu-items">
             <a class="nav-link" href="{{ url('add_doctor_view')}}">
               <span class="menu-icon">
-                <i class="mdi mdi-file-document-box"></i>
+                <i class="mdi mdi-human-male-female"></i>
               </span>
               <span class="menu-title">Add Doctor</span>
             </a>
